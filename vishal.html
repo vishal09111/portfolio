@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishalsingh Ravindranathsingh - Data Analyst Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-bg': '#0f0f23',
+                        'dark-card': '#1a1a2e',
+                        'accent': '#00d4aa',
+                        'accent-hover': '#00b894'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #00d4aa, #74b9ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 212, 170, 0.1);
+        }
+
+        .skill-bar {
+            background: linear-gradient(90deg, #00d4aa, #74b9ff);
+            height: 8px;
+            border-radius: 4px;
+            transition: width 1s ease-in-out;
+        }
+
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #00d4aa;
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .typing-animation {
+            border-right: 2px solid #00d4aa;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            50% {
+                border-color: #00d4aa;
+            }
+
+            51%,
+            100% {
+                border-color: transparent;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-dark-bg text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-dark-bg/90 backdrop-blur-sm z-50 border-b border-gray-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-xl font-bold gradient-text">Vishalsingh Ravindranathsingh</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#experience" class="nav-link">Experience</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-card border-t border-gray-800">
+            <div class="px-4 py-2 space-y-2">
+                <a href="#home" class="block py-2 nav-link">Home</a>
+                <a href="#about" class="block py-2 nav-link">About</a>
+                <a href="#skills" class="block py-2 nav-link">Skills</a>
+                <a href="#projects" class="block py-2 nav-link">Projects</a>
+                <a href="#experience" class="block py-2 nav-link">Experience</a>
+                <a href="#contact" class="block py-2 nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="animate-fade-in">
+                <!-- Profile Image -->
+                <div class="mb-8">
+                    <div class="w-48 h-48 mx-auto rounded-full bg-gradient-to-r from-accent to-blue-400 p-1">
+                        <div class="w-full h-full rounded-full bg-dark-bg flex items-center justify-center">
+                            <img src="image/propile.jpg" alt=""
+                                class="w-full h-full rounded-full bg-dark-bg flex items-center justify-center">
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                    Hi, I'm <span class="gradient-text">Vishalsingh Ravindranathsingh</span>
+                </h1>
+                <div class="text-xl md:text-2xl text-gray-300 mb-8">
+                    <span id="typing-text" class="typing-animation">Data Analyst</span>
+                </div>
+                <p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+                    Transforming raw data into actionable insights. Specialized in statistical analysis,
+                    data visualization.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#projects"
+                        class="bg-accent hover:bg-accent-hover text-dark-bg font-semibold py-3 px-8 rounded-lg transition-colors">
+                        View My Work
+                    </a>
+                    <a href="#contact"
+                        class="border border-accent text-accent hover:bg-accent hover:text-dark-bg font-semibold py-3 px-8 rounded-lg transition-colors">
+                        Get In Touch
+                    </a>
+                    <a href="/image/vishal_resume.pdf"
+                        class="bg-accent hover:bg-accent-hover text-dark-bg font-semibold py-3 px-8 rounded-lg transition-colors">
+                        Resume
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-dark-card/50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 gradient-text">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 text-accent">My Story</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Hello! I’m a budding Data Analyst passionate about using data to solve problems and uncover
+                        opportunities. With strong skills in SQL, Python, Excel, Tableau, and Power BI, I have developed
+                        hands-on experience through academic projects and self-driven case studies. These projects
+                        allowed me to practice data cleaning, analysis, visualization, and storytelling, where I
+                        converted complex datasets into clear, actionable insights.
+
+                        I particularly enjoy building dashboards that not only highlight trends but also simplify
+                        decision-making for non-technical stakeholders. My academic background has equipped me with an
+                        analytical mindset, while my curiosity motivates me to keep learning advanced tools and
+                        techniques in the analytics domain.
+
+
+                    </p>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        As a fresher, I’m eager to contribute to a forward-thinking organization, gain industry
+                        experience, and grow into a professional who can drive data-informed strategies with measurable
+                        business impact. Outside of analytics, I enjoy exploring new technologies, solving logical
+                        puzzles, and staying updated with emerging trends in the data world.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <span class="bg-accent/20 text-accent px-3 py-1 rounded-full text-sm">Hard Working</span>
+                        <span class="bg-accent/20 text-accent px-3 py-1 rounded-full text-sm">Self Motivated</span>
+                        <span class="bg-accent/20 text-accent px-3 py-1 rounded-full text-sm">Team Player</span>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-dark-card p-6 rounded-lg card-hover">
+                        <h4 class="text-xl font-semibold mb-2 text-accent">Education</h4>
+                        <p class="text-gray-300">B.Tech In Computer Science And Engineering.</p>
+                        <p class="text-gray-400 text-sm">Dr. APJ ABDUL KALAM TECHNICAL UNIVERSITIY,LUCKNOW,2022-2026</p>
+                    </div>
+                    <div class="bg-dark-card p-6 rounded-lg card-hover">
+                        <h4 class="text-xl font-semibold mb-2 text-accent">Certifications</h4>
+                        <ul class="text-gray-300 space-y-1">
+                            <li>• Tata Data Visualisation Job Simulation – Forage (2025) </li>
+                            <li>• Deloitte Data Analytics Job Simulation – Forage (2025) </li>
+                            <li>• Tranitiy</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 gradient-text">Skills & Expertise</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Technical Skills -->
+                <div class="bg-dark-card p-6 rounded-lg card-hover">
+                    <h3 class="text-xl font-semibold mb-6 text-accent">Programming</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Python</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar w-[95%]"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>SQL</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar w-[95%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visualization Tools -->
+                <div class="bg-dark-card p-6 rounded-lg card-hover">
+                    <h3 class="text-xl font-semibold mb-6 text-accent">Visualization</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Tableau</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar w-[90%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Power BI</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar w-[85%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Matplotlib</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar w-[90%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analytics -->
+                <div class="bg-dark-card p-6 rounded-lg card-hover">
+                    <h3 class="text-xl font-semibold mb-6 text-accent">Analytics</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Statistical Analysis</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar w-[95%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Excel</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar w-[85%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>A/B Testing</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar w-[90%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-dark-card/50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 gradient-text">Featured Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-dark-card rounded-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-accent/20 to-blue-400/20 flex items-center justify-center">
+                        <img src="image/prism analysis.png" alt="">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-accent">Prism Insurance Pvt.Ltd</h3>
+                        <p class="text-gray-300 mb-4">Interactive Power Bi analyzing sales trends, customer segments,
+                            and revenue forecasting for a Insurance dataset.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-accent/20 text-accent px-2 py-1 rounded text-sm">Power Bi</span>
+                            <span class="bg-accent/20 text-accent px-2 py-1 rounded text-sm">SQL</span>
+                            <span class="bg-accent/20 text-accent px-2 py-1 rounded text-sm">Python</span>
+                        </div>
+                        <button class="text-accent hover:text-accent-hover transition-colors">View Project →</button>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-dark-card rounded-lg overflow-hidden card-hover">
+                    <div
+                        class="h-48 bg-gradient-to-br from-purple-400/20 to-pink-400/20 flex items-center justify-center">
+                        <img src="image/asia cup.png" alt="">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-purple-400">AISA CUP</h3>
+                        <p class="text-gray-300 mb-4">Created a Power BI dashboard to analyze performance in cricket
+                            tournaments</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-400/20 text-purple-400 px-2 py-1 rounded text-sm">Python</span>
+                            <span class="bg-purple-400/20 text-purple-400 px-2 py-1 rounded text-sm">Power Bi</span>
+                            <span class="bg-purple-400/20 text-purple-400 px-2 py-1 rounded text-sm">Python</span>
+                        </div>
+                        <button class="text-purple-400 hover:text-purple-300 transition-colors">View Project →</button>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-dark-card rounded-lg overflow-hidden card-hover">
+                    <div
+                        class="h-48 bg-gradient-to-br from-green-400/20 to-blue-400/20 flex items-center justify-center">
+                        <img src="image/airlines.png" alt="">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-green-400">Airlines Analysis</h3>
+                        <p class="text-gray-300 mb-4">Crated A Interactive And resposive Dashboard To analyze The
+                            airlines Dataset.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-green-400/20 text-green-400 px-2 py-1 rounded text-sm">python</span>
+                            <span class="bg-green-400/20 text-green-400 px-2 py-1 rounded text-sm">Power Bi</span>
+                            <span class="bg-green-400/20 text-green-400 px-2 py-1 rounded text-sm">Statistics</span>
+                        </div>
+                        <button class="text-green-400 hover:text-green-300 transition-colors">View Project →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 gradient-text">Internship</h2>
+            <div class="space-y-8">
+                <!-- Experience 1 -->
+                <div class="bg-dark-card p-6 rounded-lg card-hover ">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold text-accent">Data Analyst</h3>
+                           <div class="flex">
+                             <p class="text-gray-300 me-2">Tranitiy</p>
+                            <a href="/image/Trainity Portfolio.pdf"
+                        class="border border-accent text-accent hover:bg-accent hover:text-dark-bg font-semibold rounded-lg transition-colors">
+                        Get More Info
+                    </a>
+                           </div>
+                            
+                        </div>
+                        <span class="text-gray-400 text-sm">2024</span>
+                    </div>
+                    <ul class="text-gray-300 space-y-2">
+                        <li>• Work on 8 diffrent Data sets.</li>
+                        <li>• Get Perfect Rating In More Than 6 Projects.</li>
+
+
+                    </ul>
+                </div>
+
+                <!-- Experience 2
+                <div class="bg-dark-card p-6 rounded-lg card-hover">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold text-accent">Data Analyst</h3>
+                            <p class="text-gray-300">DataInsights Inc.</p>
+                        </div>
+                        <span class="text-gray-400 text-sm">2019 - 2021</span>
+                    </div>
+                    <ul class="text-gray-300 space-y-2">
+                        <li>• Analyzed customer behavior patterns resulting in 25% improvement in retention rates</li>
+                        <li>• Created interactive dashboards for executive reporting using Tableau</li>
+                        <li>• Performed statistical analysis on large datasets to identify market opportunities</li>
+                        <li>• Streamlined data collection processes improving data quality by 40%</li>
+                    </ul>
+                </div> -->
+
+                <!-- Experience 3 -->
+                <!-- <div class="bg-dark-card p-6 rounded-lg card-hover">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold text-accent">Junior Data Analyst</h3>
+                            <p class="text-gray-300">StartupXYZ</p>
+                        </div>
+                        <span class="text-gray-400 text-sm">2018 - 2019</span>
+                    </div>
+                    <ul class="text-gray-300 space-y-2">
+                        <li>• Conducted market research and competitive analysis for product development</li>
+                        <li>• Built predictive models for sales forecasting with 85% accuracy</li>
+                        <li>• Collaborated with marketing team to optimize campaign performance</li>
+                        <li>• Developed data visualization reports for stakeholder presentations</li>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-dark-card/50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 gradient-text">Get In Touch</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 text-accent">Let's Connect</h3>
+                    <p class="text-gray-300 mb-8 leading-relaxed">
+                        I'm always interested in discussing new opportunities, collaborating on data projects,
+                        or simply connecting with fellow data enthusiasts. Feel free to reach out!
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-gray-300">vishalsinghravindranathsingh@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-gray-300">+91 9313790655</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-gray-300">lucknow,India</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-[#0f172a] p-8 rounded-lg shadow-lg w-full max-w-4xl mx-auto">
+  <h3 class="text-2xl font-bold mb-6 text-sky-400">Send Me a Message</h3>
+
+  <!-- Success Banner -->
+  <div id="form-success"
+    class="hidden opacity-0 transition-opacity duration-500 mb-4 p-4 rounded-lg bg-green-600 text-white font-medium">
+    ✅ Thank you! Your message has been sent.
+  </div>
+
+  <!-- Contact Form -->
+  <form id="contact-form" action="https://formsubmit.co/vishalsinghravindranathsingh@gmail.com"
+    method="POST" class="space-y-6">
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <label for="name" class="block text-gray-300 mb-2">Your Name</label>
+        <input type="text" id="name" name="name"
+          class="w-full px-4 py-3 rounded-lg bg-[#1e293b] border border-gray-600 text-gray-200 
+          focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition"
+          required placeholder="Your Name">
+      </div>
+      <div>
+        <label for="email" class="block text-gray-300 mb-2">Your Email</label>
+        <input type="email" id="email" name="email"
+          class="w-full px-4 py-3 rounded-lg bg-[#1e293b] border border-gray-600 text-gray-200 
+          focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition"
+          required placeholder="Your Email">
+      </div>
+    </div>
+
+    <div>
+      <label for="subject" class="block text-gray-300 mb-2">Subject</label>
+      <input type="text" id="subject" name="subject"
+        class="w-full px-4 py-3 rounded-lg bg-[#1e293b] border border-gray-600 text-gray-200 
+        focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition"
+        required placeholder="Message Subject">
+    </div>
+
+    <div>
+      <label for="message" class="block text-gray-300 mb-2">Your Message</label>
+      <textarea id="message" name="message" rows="5"
+        class="w-full px-4 py-3 rounded-lg bg-[#1e293b] border border-gray-600 text-gray-200 
+        focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition resize-none"
+        required placeholder="Type your message..."></textarea>
+    </div>
+
+    <!-- Hidden settings -->
+    <input type="hidden" name="_captcha" value="false">
+    <!-- <input type="hidden" name="_next" value="https://hariom-singh0708.github.io/my-portfolio/"> -->
+
+    <button type="submit"
+      class="w-full bg-sky-500 hover:bg-sky-600 text-white px-6 py-3 rounded-lg font-medium 
+      transition duration-300 shadow-md hover:shadow-lg">
+      Send Message
+    </button>
+  </form>
+</div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-bg border-t border-gray-800 py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-gray-400 mb-4 md:mb-0">
+                    © 2025 Vishal Singh. All rights reserved.
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://www.linkedin.com/in/vishalsingh-ravindranathsingh-734947296/" class="text-gray-400 hover:text-accent transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                    </a>
+                   
+                    <a href="https://github.com/vishal09111" class="text-gray-400 hover:text-accent transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Typing animation
+        const typingText = document.getElementById('typing-text');
+        const roles = ['Data Analyst', 'Data Visualizer'];
+        let currentRole = 0;
+        let currentChar = 0;
+        let isDeleting = false;
+
+        function typeAnimation() {
+            const current = roles[currentRole];
+
+            if (isDeleting) {
+                typingText.textContent = current.substring(0, currentChar - 1);
+                currentChar--;
+            } else {
+                typingText.textContent = current.substring(0, currentChar + 1);
+                currentChar++;
+            }
+
+            let typeSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && currentChar === current.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && currentChar === 0) {
+                isDeleting = false;
+                currentRole = (currentRole + 1) % roles.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(typeAnimation, typeSpeed);
+        }
+
+        // Start typing animation
+        typeAnimation();
+
+        // Animate skill bars on scroll
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillBars = entry.target.querySelectorAll('.skill-bar');
+                    skillBars.forEach(bar => {
+                        bar.style.width = bar.classList.contains('w-[95%]') ? '95%' :
+                            bar.classList.contains('w-[90%]') ? '90%' :
+                                bar.classList.contains('w-[85%]') ? '85%' : '95%';
+                    });
+                }
+            });
+        }, observerOptions);
+
+        // Observe skills section
+        const skillsSection = document.getElementById('skills');
+        if (skillsSection) {
+            observer.observe(skillsSection);
+        }
+
+        // Contact form handling with mailto
+        const contactForm = document.getElementById('contact-form');
+        const formSuccess = document.getElementById('form-success');
+
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Submit form manually with fetch so we can control response
+            const formData = new FormData(contactForm);
+            fetch(contactForm.action, {
+                method: "POST",
+                body: formData
+            }).then(() => {
+                // Show success banner
+                formSuccess.classList.remove('hidden', 'opacity-0');
+                formSuccess.classList.add('opacity-100');
+
+                // Reset form
+                contactForm.reset();
+
+                // Hide success after 4.5s
+                setTimeout(() => {
+                    formSuccess.classList.add('opacity-0');
+                    setTimeout(() => formSuccess.classList.add('hidden'), 500);
+                }, 4500);
+            }).catch(() => {
+                alert("❌ Something went wrong. Please try again later.");
+            });
+        });
+
+        // Initialize typing animation
+        setTimeout(type, 1000);
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-dark-bg/95');
+            } else {
+                nav.classList.remove('bg-dark-bg/95');
+            }
+        });
+    </script>
+    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'9740625a53101c5b',t:'MTc1NjAxMjY1Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+</body>
+
+</html>
